@@ -6,6 +6,13 @@ local set = vim.keymap.set
 local delete = vim.api.nvim_del_keymap
 local opts = { noremap = true, silent = true }
 
+local function toggleFloatTerm()
+  local floatTerminalId = GetFirstFloatTerminalId()
+  if not (floatTerminalId == nil) then
+    require("toggleterm").toggle(floatTerminalId)
+  end
+end
+
 vim.opt.winbar = "%=%m %f"
 
 set("i", "jk", "<Esc>", opts)
@@ -20,3 +27,7 @@ set("n", "<C-S-Up>", "<cmd>resize +2<cr>", opts)
 set("n", "<C-S-Down>", "<cmd>resize -2<cr>", opts)
 set("n", "<C-S-Left>", "<cmd>vertical resize -2<cr>", opts)
 set("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", opts)
+
+set("t", "<C-x>", toggleFloatTerm, opts)
+set("n", "<C-x>", toggleFloatTerm, opts)
+set("v", "<C-x>", toggleFloatTerm, opts)
