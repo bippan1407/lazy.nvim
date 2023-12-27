@@ -27,7 +27,11 @@ set("n", "<C-S-Up>", "<cmd>resize +2<cr>", opts)
 set("n", "<C-S-Down>", "<cmd>resize -2<cr>", opts)
 set("n", "<C-S-Left>", "<cmd>vertical resize -2<cr>", opts)
 set("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", opts)
+set("n", "<leader>v", function()
+  vim.fn.system("code .")
+end, opts)
 
+-- ToggleTerm commands
 set("t", "<C-x>", toggleFloatTerm, opts)
 set("n", "<C-x>", toggleFloatTerm, opts)
 set("v", "<C-x>", toggleFloatTerm, opts)
