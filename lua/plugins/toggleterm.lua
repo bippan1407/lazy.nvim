@@ -149,11 +149,6 @@ return {
       desc = "Lazygit",
     },
     {
-      "<leader>gc",
-      "<cmd>Telescope git_branches<cr>",
-      desc = "Git branches",
-    },
-    {
       "<leader>gb",
       function()
         local notify = require("notify")
