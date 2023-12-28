@@ -15,6 +15,8 @@ end
 
 vim.opt.winbar = "%=%m %f"
 
+set("n", "U", "<cmd>redo<cr>", opts)
+
 set("i", "jk", "<Esc>", opts)
 set("n", "<leader>rn", ":IncRename ")
 
@@ -35,3 +37,6 @@ end, opts)
 set("t", "<C-x>", toggleFloatTerm, opts)
 set("n", "<C-x>", toggleFloatTerm, opts)
 set("v", "<C-x>", toggleFloatTerm, opts)
+
+-- copy function
+set("n", "<leader>vf", "va{V", opts)
