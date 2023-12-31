@@ -16,12 +16,27 @@ return {
       "<leader>fF",
       false,
     },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find Files" },
     { "<leader>,", false },
     {
       "fr",
       function()
         local telescope = require("telescope")
+        -- telescope.setup({
+        --   defaults = {
+        --     -- hidden = true,
+        --     file_ignore_patterns = {
+        --       "node_modules",
+        --       "build",
+        --       "dist",
+        --       "yarn.lock",
+        --       ".git",
+        --       ".yarn",
+        --       "storybook-static",
+        --       ".gitignore",
+        --     },
+        --   },
+        -- })
         telescope.extensions.file_browser.file_browser({
           respect_gitignore = false,
           hidden = true,
@@ -70,6 +85,17 @@ return {
       winblend = 0,
       mappings = {
         n = {},
+      },
+      hidden = true,
+      file_ignore_patterns = {
+        "node_modules",
+        "build",
+        "dist",
+        "yarn.lock",
+        ".git",
+        ".yarn",
+        "storybook-static",
+        ".gitignore",
       },
     })
     opts.pickers = {
