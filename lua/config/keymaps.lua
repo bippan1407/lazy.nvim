@@ -39,7 +39,7 @@ set("n", "<C-x>", toggleFloatTerm, opts)
 set("v", "<C-x>", toggleFloatTerm, opts)
 
 -- copy function
-set("n", "<leader>vf", "va{V", opts)
+set("n", "<leader>cf", "va{V", opts)
 
 -- move lines up and downk
 set({ "n" }, "<C-S-k>", ":m .-2<cr>==", opts)
