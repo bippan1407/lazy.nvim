@@ -45,3 +45,7 @@ set("n", "<C-j>", ":TmuxNavigateDown<CR>", { silent = true })
 set("n", "<C-h>", ":TmuxNavigateLeft<CR>", { silent = true })
 set("n", "<C-l>", ":TmuxNavigateRight<CR>", { silent = true })
 set("n", "<C-k>", ":TmuxNavigateUp<CR>", { silent = true })
+
+set("n", "<leader>ks", function()
+  vim.fn.system("tmux kill-session -t .")
+end, opts)
